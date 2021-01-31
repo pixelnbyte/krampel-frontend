@@ -1,0 +1,33 @@
+.list-card {
+	padding: 1rem;
+	background: #F1F9FF;
+	border-radius: 15px;
+}
+.list-card h3, .list-card p {
+	margin: 0;
+}
+.list-card h3 {
+	margin-bottom: 1rem;
+}
+.list-card .picked {
+	margin: 1rem 0;
+}
+
+.list-card .status {
+	position: relative;
+	padding-left: .75rem;
+	text-transform: uppercase;
+}
+.list-card .status::before {
+	content: '';
+	width: .5rem;
+	height: .5rem;
+	background: #2699FB;
+	position: absolute;
+	left: 0;
+	top: .25rem;
+	border-radius: 10rem;
+}
+.list-card .status.completed::before {
+	background: #26AD33;
+}

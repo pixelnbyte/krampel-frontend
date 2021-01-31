@@ -1,0 +1,15 @@
+/* Header Styles */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+}
+img.App-logo {
+	max-width: 10rem;
+}
+
+header nav .button {
+	margin-left: 1rem;
+}

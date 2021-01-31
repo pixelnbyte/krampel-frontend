@@ -1,0 +1,90 @@
+
+.items-table .image-wrapper {
+  width: 2rem;
+  overflow: visible;
+  height: 2rem;
+  border-radius: 8px;
+  background-size: cover;
+  margin: .5rem .25rem;
+  display: block;
+  position: relative;
+  margin-right: 1rem;
+}
+.items-table .image-wrapper img {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 0;
+  height: 0;
+  transition: .5s;
+}
+.items-table .image-wrapper:hover img {
+	width: 10rem;
+	height: auto;
+}
+
+.items-table td:first-child, .items-table th:first-child {
+  width: auto;
+}
+.items-table td:first-child {
+	display: flex;
+	align-items: center;
+}
+
+.items-table .button {
+	margin: 0 .5rem;
+}
+.button.found, .button.not-found {
+	display: inline-block;
+}
+.button.found::before, .button.not-found::before {
+	content: '';
+	width: 1rem;
+	height: .8rem;
+	background: url(../img/check.png) no-repeat;
+	background-size: contain;
+	display: inline-block;
+	margin-right: .25rem;
+	position: relative;
+	top: 2px;
+}
+.button.not-found {
+	background: #707070;
+	border-color: #707070;
+}
+.button.not-found::before {
+	background-image: url(../img/ex.png);
+}
+
+.items-table .status {
+	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	justify-content: flex-start;
+	width: 6.5rem;
+	margin: auto;
+}
+.items-table .status.not-found::before, .items-table .status.found::before {
+	content: '';
+	width: 1rem;
+	height: .8rem;
+	background: url(../img/blue-check.png) no-repeat;
+	background-size: contain;
+	display: block;
+	margin-right: .25rem;
+	border-radius: 0;
+	position: static;
+}
+.items-table .status.not-found::before {
+	background-image: url(../img/red-ex.png);
+}
+.items-table .status.picking::before {
+	background-color: #FBE026;
+	position: static;
+	margin-right: .35rem;	
+}
+
+.items-table td:nth-child(5) {
+  display: table-cell;
+}

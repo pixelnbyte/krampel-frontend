@@ -1,0 +1,39 @@
+/* Users */
+
+.user-table td {
+  padding: .5rem;
+}
+.role {
+  text-transform: capitalize;
+}
+.role::before {
+  content: '';
+  width: .5rem;
+  height: .5rem;
+  background: #2699FB;
+  display: inline-block;
+  margin-right: .5rem;
+  border-radius: 10rem; 
+}
+.role.admin::before {
+  background-color: #FBE026;
+}
+
+.user-table td:nth-child(5) {
+  display: table-cell;
+}
+.user-table .button.tiny.icon {
+  padding: .25rem .5rem;
+}
+.button .delete::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background: url(../img/trash.png) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  left: 1px;
+  filter: brightness(100%);
+}

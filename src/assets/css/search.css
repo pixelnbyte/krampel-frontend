@@ -1,0 +1,22 @@
+
+.search {
+  position: relative;
+  width: 60%;
+}
+.search input[type="text"] {
+  padding: .75rem;
+  border-radius: 8px;
+  border: 2px solid #BCE0FD;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+.search input[type="submit"] {
+  position: absolute;
+  right: 1rem;
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAAABHNCSVQICAgIfAhkiAAABHZJREFUaEPdWkty20YQfY0C4I1dVk4QqsrkNvYJTJ3AygksbQJqFekEhk4geiUxG8k3oE9gOheItAVVJah8gEhLY1Do1ODDwpcYfByTwkpVnOmZN/26p/uNCC2/4V/8mth/x4yxNEHgAYgG8m8GX4PpITLNc2jG1+UfdN1yqdppVDsiNWBwzgODxAcCxsmGleczuwwsBBun7hG5yvMUBiqBGFzyjun5fwKwFWyqDLE9U//oHibeUplSPaYWxPDcP4DGZwTsdFsqO5uBBwR0sjzSr7raXQtiNBMfqk6fgUdiLJhpzmDXh+4mNJG00+EPCDQg4n0mjAl4WbFZ27GM0y5ASkFI+hjfxRkRHRSN8z0Hmt30BKVHSQtsgH7N22TmK/HMOGlLr1IQwwvvMg9AnjyD7VvLnHY5tdFM2Awc5z0jgSwn5mEb2wUQchEAkkarTwIA6eO+0qRMz2B/UUKxU8cyGiePDIjI5XyZOQ3mG++ZMW7r6qqTDTPed7EA0W+ZAwvosClVVyDCOPD8u3QWkh4Qpj7oG0Cy6XhNN+0RmbWEqe82WXMFIk+jvilU5ZEKajWiVQhCpkRT8+/SCwXgk65BrBqkZXHoBfqu6s0eghjOvCsCvU+F8r1jmWEd9H99o5nnptMvgz8tLbMkxRd3FIIYXXh36VqIWwRXV7CFpMLsOhNzV8UuxdXoP8lgGQtLy+i1xFDZSMQI8ZAJctLfqKR1KvCR8dmZGPuqC/c5bnQh5iC8S2yqxiUNZ0JeOm9XnvgJVErWzlOKga9Lywj7lXVfAUQQYO/2yFjUTfwRv786F2NNw5cUtdVA5IO6SWrrG0gxPvl6aZlv6taRMcHpQY5l1PYYdUa7/N5mP08FRPaS2SQ6gfnGmZiv6zz7NAL7SaTYVzPvWAOdrVy2lZddJIKly46HpWX8UsfDH/H7cCb+zfQzqmVHWADmK8ifcGsXu0pWrqTLS/EGFWRfHilU0oyPy4lxrGK/sikC0Ki7UlmsakwvTVFEqazKESp0pO+plMJdAMTt6ZecwtjoAPNCQeemvQmgSKTzvwF4TvFO2ogTtZKNlOmFaew1UR9UgMRKxzcCnsvxzIAE0qarVBXPeqVWTKG/CXiRBhwwPt+2aMjKZcyCcCAfTiBbx2lX8VeK1FLGRKyy5zfQiyfkyUSuFtOsAhKfGbML0mzH0j+p0CYZM5r578GBnREkYgrl7TQFUiftF3TZVNclPbMAaB4QuwT9Mclkki4M/6XG8vmL9xmhtF8qPkgKaam+emW/wYVb2wDFjyzTNe8LTRySKtHwiICOpe5aqgHLYFcEUgsioZfp+ZLHGbW81e6jSaeeqU/TGa8LECUQyWbDh0dN2OHDY8ljyXpQfC9flQTr0yp5si2QRiDSmwx5z2JMoFCjIuadlUzPfMMUPSoyeE5kLFRv/jZAWoPoQKXaqU2BbCQIibIJkI0F0QTIRoNQBbLxINYBAeh3x9LnWwGiEkjcgW4NiHIgUR++VSASINA4/IcAAh1sFZ3WXS7/AcvEtVD4yl8WAAAAAElFTkSuQmCC) no-repeat center;
+  background-size: contain;
+  border: none;
+  height: 100%;
+  width: 1.25rem;
+}

@@ -1,0 +1,34 @@
+/* Tabs */
+.tab-header {
+  display: flex;
+}
+.tab-header a {
+  flex-grow: 1;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  border: 1px solid #2699FB;
+  border-right: 0;
+  color: #2699FB;
+  text-transform: uppercase;
+}
+.tab-header a:last-child {
+	border-right: 1px solid #2669FB;
+}
+.tab-header a.active {
+	background: #2699FB;
+	color: #ffffff;
+}
+
+.tab-body {
+	padding: 1rem;
+	border: 1px solid #2699FB;
+	border-top: none;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 2rem;
+}
