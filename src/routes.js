@@ -1,29 +1,32 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import Tabs from './components/Tabs';
 import Users from './components/Users';
 import Login from './components/Login';
-import useToken from './useToken';
+import PrivateRoute from './PrivateRoute';
+import AdminRoute from './AdminRoute';
+import { AuthContext } from './context/auth';
 
-export const Routes = () => {
-  const { token, setToken } = useToken();
-
-  if(!token) {
-    return <Login setToken={setToken} />
+export const Routes = (props) => {
+  const [authTokens, setAuthTokens] = useState();
+  const setTokens = (data) => {
+    localStorage.setItem("tokens", JSON.stringify(data));
+    setAuthTokens(data);
   }
 
   return (
-    <div>
-      <Switch>
-        <Route exact path="/Orders" render={(props) => <Tabs status={'orders'} {...props} /> } />
-        <Route exact path="/">
-          <Redirect to="/Orders" render={(props) => <Tabs status={'orders'} {...props} /> } />
-        </Route>
-        <Route path="/Picking/:id"  render={(props) => <Tabs status={'picking'} {...props} /> }/>
-        <Route exact path="/Picking" render={(props) => <Tabs status={'picklist'} {...props} /> } />
-        <Route exact path="/Users" component={Users} />
-      </Switch>
-    </div>
+    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+      <Router>
+          <Route exact path="/">
+            <Redirect to="/Orders" render={(props) => <Tabs status={'orders'} {...props} /> } />
+          </Route>
+          <Route path="/Login" render={props => (<Login {...props} state={"/"} /> )} />
+          <PrivateRoute path="/Orders" component={Tabs} status={'orders'} {...props} />
+          <PrivateRoute exact path="/Picking/:id" component={Tabs} status={'picking'} {...props} />
+          <PrivateRoute exact path="/Picking" component={Tabs} status={'picklist'} {...props} />
+          <AdminRoute exact path="/Users" component={Users} />
+      </Router>
+    </AuthContext.Provider>
   );
 };

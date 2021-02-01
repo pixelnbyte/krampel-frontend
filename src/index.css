@@ -14,6 +14,11 @@ p, a, input {
   color: #707070;
   outline: none;
 }
+h5 {
+	font-size: 1.4rem;
+	margin: 0;
+	margin-bottom: .5rem;
+}
 
 .App-body {
 	margin-top: 2rem;

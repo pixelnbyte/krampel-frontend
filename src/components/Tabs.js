@@ -11,6 +11,7 @@ export default class Tabs extends React.Component {
 
   constructor(props) {
     super();
+    console.log(props);
   }
 
   render(){

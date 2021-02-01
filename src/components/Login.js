@@ -1,36 +1,53 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { Link, Redirect } from 'react-router-dom';
 
-export default function Login({ setToken }) {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+import logoImg from '../assets/img/logo.png';
+import { useAuth } from '../context/auth';
+import '../assets/css/login.css';
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    const token = {token: "test123"};
-    setToken(token);
+function Login(props) {
+  const [isLoggedin, setLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [adminRole, setadminRole] = useState(false);
+  const { setAuthTokens } = useAuth();
+
+  var referer = '';
+  if(props.location.state) {
+    referer = props.location.state.referer || '/'; 
+  } else {
+    referer = '/';
   }
 
-  return(
+  function postLogin() {
+    const success = true;
+    if(success) {
+      if(userName == 'admin' && password == 'admin') setAuthTokens('admin');
+      if(userName == 'user' && password == 'user') setAuthTokens('user');
+      setLoggedIn(true);
+    } else {
+      setIsError(true);
+    }
+  }
+
+  if (isLoggedin) {
+    return <Redirect to={referer} />;
+  }
+
+  return (
     <div className="login-wrapper">
-      <h1>Please Log In</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <p>Username</p>
-          <input type="text" onChange={e => setUsername(e.target.value)} />
-        </label>
-        <label>
-          <p>Password</p>
-          <input type="password" onChange={e => setPassword(e.target.value)} />
-        </label>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
+      <img className="login-logo" src={logoImg} />
+      <form>
+        <h5>Login</h5>
+        <input type="username" value={userName} onChange={e => { setUserName(e.target.value); }} placeholder="Username" />
+        <input type="password" value={password} onChange={e => { setPassword(e.target.value); }} placeholder="Password" />
+        <button onClick={postLogin} className="button filled">Sign In</button>
       </form>
+      <Link to="/">Forgot your password?</Link>
+      { isError && <p>The username or password provided were incorrect!</p> }
     </div>
-  )
+  );
 }
 
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-};
+export default Login;

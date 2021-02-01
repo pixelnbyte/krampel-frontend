@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useHistory } from "react-router";
 
 import '../assets/css/header.css';
+import { useAuth } from '../context/auth';
 
 function Header(props) {
   var nav = <Link to="/Orders" className="button small">Orders</Link>;
@@ -10,8 +11,9 @@ function Header(props) {
     nav = <Link to="/Users" className="button small">Users</Link>;
   }
 
+  const { setAuthTokens } = useAuth();
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    setAuthTokens();
   }
 
   return (
@@ -19,7 +21,7 @@ function Header(props) {
       <img src={logo} className="App-logo" alt="logo" />
       <nav>
         {nav}      
-        <a href="#" className="button filled small" onClick={handleLogout} >Logout</a>
+        <a href="#" className="button filled small" onClick={handleLogout}>Logout</a>
       </nav>
     </header>
   );
